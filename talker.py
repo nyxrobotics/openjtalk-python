@@ -78,8 +78,8 @@ def say_longtext(longtext_in):
             list2 = text.split('、')
             for num2 in range(len(list2)):
                 text = list2[num2]
-                if len(text) < 50 and text != "":
-                    jtalk_wait(text + "〜、")
+                if len(text) < 50 and text != "":#それでも多かったら無視
+                    jtalk_wait(text + "、")
         else:
             if text != "":
                 jtalk_wait(text + "〜っ、。")#語尾を適当に調整
@@ -88,8 +88,8 @@ def say_longtext(longtext_in):
 def main():
     # text = 'こんにちは、テストです。文章区切りの検証をします。'
     # say_longtext(text)
-    say_datetime()
-    print("文字を入力してみよう。(Ctrl + d で入力完了)")
+    # say_datetime()
+    print("文字を入力してください。(Ctrl + d で入力完了)")
     # text=input()
     text=sys.stdin.read()
     say_longtext(text)
