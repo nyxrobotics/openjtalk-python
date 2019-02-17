@@ -93,7 +93,7 @@ def main():
     # text=input()
     text=sys.stdin.read()
     say_longtext(text)
-
+    # jtalk_wait(text)
 
 
 
