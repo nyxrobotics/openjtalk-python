@@ -43,7 +43,7 @@ def jtalk_wait(t):
 def say_datetime():
     d = datetime.now()
     text = '%s月%s日、%s時%s分%s秒' % (d.month, d.day, d.hour, d.minute, d.second)
-    jtalk('只今の時刻は、' + text + 'です。')
+    jtalk('只今の時刻は' + text + 'です。')
 
 def say_longtext(longtext_in):
     longtext = longtext_in
@@ -79,16 +79,16 @@ def say_longtext(longtext_in):
             for num2 in range(len(list2)):
                 text = list2[num2]
                 if len(text) < 50 and text != "":
-                    jtalk_wait(text + "〜っ、")
+                    jtalk_wait(text + "〜、")
         else:
             if text != "":
                 jtalk_wait(text + "〜っ、。")#語尾を適当に調整
                 # print(text)
 
 def main():
-    text = 'こんにちは、テストです。文章区切りの検証をします。'
+    # text = 'こんにちは、テストです。文章区切りの検証をします。'
     # say_longtext(text)
-    # say_datetime()
+    say_datetime()
     print("文字を入力してみよう。(Ctrl + d で入力完了)")
     # text=input()
     text=sys.stdin.read()
