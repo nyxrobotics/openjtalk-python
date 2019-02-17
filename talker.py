@@ -47,33 +47,43 @@ def say_datetime():
 
 def say_longtext(longtext_in):
     longtext = longtext_in
+
     longtext=re.sub(r' ', "、", longtext)#半角スペース
     longtext=re.sub(r'　', "、", longtext)#全角スペース
-    longtext=re.sub(r'。\n', "。", longtext)#改行
     longtext=re.sub(r'\n', "。", longtext)#改行
     longtext=re.sub(r'ゝ', "ー、", longtext)#繰り返し記号
+    longtext=re.sub(r'」', "、", longtext)#かぎかっこ
+    longtext=re.sub(r'「', "、", longtext)#かぎかっこ
+    longtext=re.sub(r'！', "っ。", longtext)#びっくり
+    longtext=re.sub(r'!', "っ。", longtext)#びっくり
+    longtext=re.sub(r'。、', "。", longtext)#その他
+    longtext=re.sub(r'。。', "。", longtext)#その他
+    longtext=re.sub(r'。 ', "。", longtext)#その他
+    longtext=re.sub(r'。　', "。", longtext)#その他
+    longtext=re.sub(r'―', "", longtext)#その他
+    longtext=re.sub(r'\.', "。", longtext)#句読点
+    longtext=re.sub(r'．', "。", longtext)#句読点
+    longtext=re.sub(r',', "、", longtext)#句読点
+    longtext=re.sub(r'，', "、", longtext)#句読点
+    longtext=re.sub(r'。\\1', "。",longtext)#複数連続
 
     list1 = longtext.split('。')
     for num1 in range(len(list1)):
-        list2 = list1[num1].split('.')
-        for num2 in range(len(list2)):
-            text = list2[num2]
-            if len(text) > 50:#文字数が多すぎるときは読点でも分割
-                list3 = text.split('、')
-                for num3 in range(len(list3)):
-                    list4 = list3[num3].split(',')
-                    for num4 in range(len(list4)):
-                        text = list4[num4]
-                        text=re.sub(r'[!-/:-@[-`{-~]', "、", text)#半角記号,数字,英字
-                        text=re.sub(r'[︰-＠]', "、", text)#全角記号
-                        if len(text) < 50 and text != "":
-                            jtalk_wait(text)
-            else:
-                text=re.sub(r'[!-/:-@[-`{-~]', "、", text)#半角記号,数字,英字
-                text=re.sub(r'[︰-＠]', "、", text)#全角記号
-                if text != "":
-                    jtalk_wait(text + "〜っ、。")#語尾を適当に調整
-                    # print(text)
+        text = list1[num1]
+        text=re.sub(r'[!-/:-@[-`{-~]', "、", text)#半角記号,数字,英字
+        text=re.sub(r'[︰-＠]', "、", text)#全角記号
+        text=re.sub(r'、\\1', "、", text)#複数連続
+
+        if len(text) > 50:#文字数が多すぎるときは読点でも分割
+            list2 = text.split('、')
+            for num2 in range(len(list2)):
+                text = list2[num2]
+                if len(text) < 50 and text != "":
+                    jtalk_wait(text + "〜っ、")
+        else:
+            if text != "":
+                jtalk_wait(text + "〜っ、。")#語尾を適当に調整
+                # print(text)
 
 def main():
     text = 'こんにちは、テストです。文章区切りの検証をします。'
