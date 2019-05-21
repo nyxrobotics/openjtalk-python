@@ -91,7 +91,7 @@ def main():
     # say_datetime()
     print("文字を入力してください。(Ctrl + d で入力完了)")
     # text=input()
-    text=sys.stdin.read()
+    text=sys.stdin.read().decode("UTF-8")
     say_longtext(text)
     # jtalk_wait(text)
 
