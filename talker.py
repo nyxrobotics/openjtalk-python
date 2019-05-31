@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#coding: utf-8
+#coding: UTF-8
 import subprocess
 import re
 import sys
