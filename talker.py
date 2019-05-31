@@ -8,9 +8,9 @@ from datetime import datetime
  
 def jtalk(t):
     echo = 'echo'+' '+t+'|'
-    open_jtalk = './lib/open_jtalk-1.11/bin/open_jtalk'+ ' '
-    dic ='-x' + ' ' + './lib/open_jtalk_dic_utf_8-1.11' + ' '
-    htsvoice ='-m' + ' ' + './lib/MMDAgent_Example-1.8/Voice/mei/mei_happy.htsvoice' + ' '
+    open_jtalk = '~/lib/openjtalk_libs/open_jtalk-1.11/bin/open_jtalk'+ ' '
+    dic ='-x' + ' ' + '~/lib/openjtalk_libs/open_jtalk_dic_utf_8-1.11' + ' '
+    htsvoice ='-m' + ' ' + '~/lib/openjtalk_libs/MMDAgent_Example-1.8/Voice/mei/mei_happy.htsvoice' + ' '
     speed='-r' + ' ' +'1.0 '
     outwav='-ow' + ' ' +'/dev/stdout | aplay --quiet'
     cmd=echo+open_jtalk+dic+htsvoice+speed+outwav
@@ -19,9 +19,9 @@ def jtalk(t):
 
 def jtalk_quick(t):
     echo = 'echo'+' '+t+'|'
-    open_jtalk = './lib/open_jtalk-1.11/bin/open_jtalk'+ ' '
-    dic ='-x' + ' ' + './lib/open_jtalk_dic_utf_8-1.11' + ' '
-    htsvoice ='-m' + ' ' + './lib/MMDAgent_Example-1.8/Voice/mei/mei_happy.htsvoice' + ' '
+    open_jtalk = '~/lib/openjtalk_libs/open_jtalk-1.11/bin/open_jtalk'+ ' '
+    dic ='-x' + ' ' + '~/lib/openjtalk_libs/open_jtalk_dic_utf_8-1.11' + ' '
+    htsvoice ='-m' + ' ' + '~/lib/openjtalk_libs/MMDAgent_Example-1.8/Voice/mei/mei_happy.htsvoice' + ' '
     speed='-r' + ' ' +'1.0 '
     outwav='-ow' + ' ' +'/dev/stdout | aplay --quiet'
     cmd=echo+open_jtalk+dic+htsvoice+speed+outwav
@@ -30,9 +30,9 @@ def jtalk_quick(t):
 
 def jtalk_wait(t):
     echo = 'echo'+' '+t+'|'
-    open_jtalk = './lib/open_jtalk-1.11/bin/open_jtalk'+ ' '
-    dic ='-x' + ' ' + './lib/open_jtalk_dic_utf_8-1.11' + ' '
-    htsvoice ='-m' + ' ' + './lib/MMDAgent_Example-1.8/Voice/mei/mei_happy.htsvoice' + ' '
+    open_jtalk = '~/lib/openjtalk_libs/open_jtalk-1.11/bin/open_jtalk'+ ' '
+    dic ='-x' + ' ' + '~/lib/openjtalk_libs/open_jtalk_dic_utf_8-1.11' + ' '
+    htsvoice ='-m' + ' ' + '~/lib/openjtalk_libs/MMDAgent_Example-1.8/Voice/mei/mei_happy.htsvoice' + ' '
     speed='-r' + ' ' +'1.0 '
     outwav='-ow' + ' ' +'/dev/stdout | aplay --quiet --device=default'
     cmd=echo+open_jtalk+dic+htsvoice+speed+outwav
